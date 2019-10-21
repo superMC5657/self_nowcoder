@@ -5,3 +5,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 include_directories(include)
 add_executable(self_nowcoder main.cpp)
+add_executable(forJob src/forJob/0_main.cpp)
