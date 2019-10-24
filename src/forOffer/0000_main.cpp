@@ -1,4 +1,4 @@
-#include "src/0002_replaceSpace.cpp"
+#include "0002_replaceSpace.cpp"
 
 int main() {
     fun();
