@@ -15,6 +15,7 @@
 #include <stack>
 #include <map>
 #include <queue>
+#include <functional>
 
 using std::stack;
 using std::unordered_map;
@@ -40,6 +41,30 @@ struct ListNode {
     //make me can use ListNode(5)
     //lambda;
     ListNode(int x) : val(x), next(nullptr) {
+    }
+};
+
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+struct Node {
+    int val;
+    vector<Node *> neighbors;
+
+    Node() {}
+
+    Node(int _val) {
+        val = _val;
+    }
+
+    Node(int _val, vector<Node *> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
     }
 };
 

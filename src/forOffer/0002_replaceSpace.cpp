@@ -3,6 +3,7 @@
   !@author: superMC @email: 18758266469@163.com
   !@fileName: 0002_replaceSpace.cpp
  */
+#include <cstring>
 #include "environment.h"
 
 class Solution {
