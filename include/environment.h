@@ -9,6 +9,7 @@
 
 #include <algorithm>
 #include <iostream>
+#include <utility>
 #include <vector>
 #include <unordered_map>
 #include <sstream>
@@ -33,39 +34,39 @@ using std::map;
 using std::max;
 using std::min;
 using std::function;
+namespace self_envs {
+    struct ListNode {
+        int val;
+        ListNode *next;
 
-struct ListNode {
-    int val;
-    ListNode *next;
+        //make me can use ListNode(5)
+        //lambda;
+        explicit ListNode(int x) : val(x), next(nullptr) {
+        }
+    };
 
-    //make me can use ListNode(5)
-    //lambda;
-    ListNode(int x) : val(x), next(nullptr) {
-    }
-};
+    struct TreeNode {
+        int val;
+        TreeNode *left;
+        TreeNode *right;
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
+        explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    };
 
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-};
+    struct Node {
+        int val;
+        vector<Node *> neighbors;
 
-struct Node {
-    int val;
-    vector<Node *> neighbors;
+        Node() = default;
 
-    Node() {}
+        explicit Node(int _val) {
+            val = _val;
+        }
 
-    Node(int _val) {
-        val = _val;
-    }
-
-    Node(int _val, vector<Node *> _neighbors) {
-        val = _val;
-        neighbors = _neighbors;
-    }
-};
-
+        Node(int _val, vector<Node *> _neighbors) {
+            val = _val;
+            neighbors = std::move(_neighbors);
+        }
+    };
+}
 #endif //SELF_LEETCODE_ENVIROMENT_H
