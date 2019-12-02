@@ -1,4 +1,4 @@
-#include "0004_rebuild_binary_tree.cpp"
+#include "0006_rotate_the_smallest_number_of_an_array.cpp"
 
 int main() {
     fun();
