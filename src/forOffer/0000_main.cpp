@@ -1,4 +1,4 @@
-#include "0006_rotate_the_smallest_number_of_an_array.cpp"
+#include "0002_replaceSpace.cpp"
 
 int main() {
     fun();
