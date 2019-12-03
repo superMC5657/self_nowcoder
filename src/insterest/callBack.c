@@ -12,7 +12,7 @@ typedef void(*ptrFun)(char *);//用typedef定义函数指针，也将其成为�
 void CallerFun(ptrFun fun)//父函数
 {
     printf("==Start callback fun==\n");
-    fun("Hi callback function");
+    fun((char *) "Hi callback function");
     printf("==End callback fun==\n");
 }
 
