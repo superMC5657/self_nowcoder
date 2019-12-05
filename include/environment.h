@@ -17,7 +17,7 @@
 #include <map>
 #include <queue>
 #include <functional>
-
+#include <cmath>
 using std::stack;
 using std::unordered_map;
 using std::map;

@@ -37,11 +37,7 @@ public:
     }
 
     int Fibonacci(int n) {
-        if (n <= 0) {
-            return 0;
-        } else {
-            return (pow(((1 + sqrt(5)) / 2.0), n) - pow(((1 - sqrt(5)) / 2.0), n)) / sqrt(5);
-        }
+        return n <= 0 ? 0 : (pow((1 + sqrt(5)) / 2.0, n) - pow((1 - sqrt(5)) / 2.0, n)) / sqrt(5);
     }
 
 };
