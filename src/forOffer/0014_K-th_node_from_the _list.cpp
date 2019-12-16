@@ -12,7 +12,7 @@ public:
     ListNode *FindKthToTail(ListNode *pListHead, unsigned int k) {
         int length = 1;
         ListNode *tmp = pListHead;
-        while (tmp->next != nullptr) {
+        while (tmp->next != nullptr && tmp != nullptr) {
             tmp = tmp->next;
             length++;
         }
@@ -23,12 +23,10 @@ public:
         }
         int del_num_th = length - k;
         ListNode *res = pListHead;
-        for (int i = 0; i < del_num_th - 1; i++) {
+        for (int i = 0; i < del_num_th; i++) {
             res = res->next;
         }
-        ListNode *jump = res->next;
-
-        return jump;
+        return res;
     }
 };
 
