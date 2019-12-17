@@ -53,4 +53,17 @@ ListNode *stringToListNode(string input) {
     return ptr;
 }
 
+string listNodeToString(ListNode *node) {
+    if (node == nullptr) {
+        return "[]";
+    }
+
+    string result;
+    while (node) {
+        result += to_string(node->val) + ", ";
+        node = node->next;
+    }
+    return "[" + result.substr(0, result.length() - 2) + "]";
+}
+
 #endif //SELF_NOWCODER_SELFFUN_H
