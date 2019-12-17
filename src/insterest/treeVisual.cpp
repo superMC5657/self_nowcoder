@@ -8,6 +8,8 @@
 #include "bst.h"
 #include "VisualTree.h"
 
+using bst::TreeNode;
+using bst::BSTree;
 
 int fun(int argc, char *argv[]) {
     typedef int ValueType;

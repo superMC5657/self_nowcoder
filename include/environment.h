@@ -53,17 +53,17 @@ namespace self_envs {
         explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
     };
 
-    struct Node {
+    struct graphNode {
         int val;
-        vector<Node *> neighbors;
+        vector<graphNode *> neighbors;
 
-        Node() = default;
+        graphNode() = default;
 
-        explicit Node(int _val) {
+        explicit graphNode(int _val) {
             val = _val;
         }
 
-        Node(int _val, vector<Node *> _neighbors) {
+        graphNode(int _val, vector<graphNode *> _neighbors) {
             val = _val;
             neighbors = std::move(_neighbors);
         }

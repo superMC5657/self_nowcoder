@@ -8,6 +8,7 @@
 
 #include <environment.h>
 
+using self_envs::TreeNode;
 using self_envs::ListNode;
 
 void trimLeftTrailingSpaces(string &input) {
@@ -64,6 +65,52 @@ string listNodeToString(ListNode *node) {
         node = node->next;
     }
     return "[" + result.substr(0, result.length() - 2) + "]";
+}
+
+TreeNode *stringToTreeNode(string input) {
+    trimLeftTrailingSpaces(input);
+    trimRightTrailingSpaces(input);
+    input = input.substr(1, input.length() - 2);
+    if (input.empty()) {
+        return nullptr;
+    }
+
+    string item;
+    stringstream ss;
+    ss.str(input);
+
+    getline(ss, item, ',');
+    TreeNode *root = new TreeNode(stoi(item));
+    std::queue<TreeNode *> nodeQueue;
+    nodeQueue.push(root);
+
+    while (true) {
+        TreeNode *node = nodeQueue.front();
+        nodeQueue.pop();
+
+        if (!getline(ss, item, ',')) {
+            break;
+        }
+
+        trimLeftTrailingSpaces(item);
+        if (item != "null") {
+            int leftNumber = stoi(item);
+            node->left = new TreeNode(leftNumber);
+            nodeQueue.push(node->left);
+        }
+
+        if (!getline(ss, item, ',')) {
+            break;
+        }
+
+        trimLeftTrailingSpaces(item);
+        if (item != "null") {
+            int rightNumber = stoi(item);
+            node->right = new TreeNode(rightNumber);
+            nodeQueue.push(node->right);
+        }
+    }
+    return root;
 }
 
 #endif //SELF_NOWCODER_SELFFUN_H
