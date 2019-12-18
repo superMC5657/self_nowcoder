@@ -113,4 +113,26 @@ TreeNode *stringToTreeNode(string input) {
     return root;
 }
 
+vector<vector<int>> stringToVectorVectorInteger(string input) {
+    trimLeftTrailingSpaces(input);
+    trimRightTrailingSpaces(input);
+    input = input.substr(1, input.length() - 2);
+    stringstream ss;
+    ss.str(input);
+    string item;
+    vector<vector<int>> res;
+    char delim = ']';
+    int i = 0;
+    while (getline(ss, item, delim)) {
+        if (i == 0) {
+            vector<int> l = stringToIntegerVector(item + "]");
+            res.push_back(l);
+        } else {
+            res.push_back(stringToIntegerVector(item.substr(1, item.size()) + ']'));
+        }
+        i++;
+    }
+    return res;
+}
+
 #endif //SELF_NOWCODER_SELFFUN_H
