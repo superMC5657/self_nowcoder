@@ -3,13 +3,13 @@
 #include "VisualTree.h"
 
 typedef int ValueType;
-typedef TreeNode<ValueType> NodeType;
+typedef bst::TreeNode<ValueType> NodeType;
 VisualTree<NodeType, ValueType> vtree(&NodeType::parent,
                                       &NodeType::left,
                                       &NodeType::right,
                                       &NodeType::val);
 
-NodeType treeNodeToNodeType(self_envs::TreeNode *root, NodeType *new_root) {
+void treeNodeToNodeType(self_envs::TreeNode *root, NodeType *new_root) {
     new_root->val = root->val;
     if (root->left != nullptr) {
         new_root->left = new NodeType(0, new_root);

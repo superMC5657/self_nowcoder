@@ -3,7 +3,10 @@
   !@author: superMC @email: 18758266469@163.com
   !@fileName: subTree_of_tree.cpp
  */
+
+
 #include <selfFun.h>
+#include <function.hpp>
 
 class Solution {
 private:
@@ -29,12 +32,15 @@ public:
     }
 };
 
-int fun() {
+int fun(int argc, char *argv[]) {
     string string1 = "[8,8,7,9,2,null,null,null,null,4,7]";
     string string2 = "[8,9,2]";
     TreeNode *pRoot1 = stringToTreeNode(string1);
     TreeNode *pRoot2 = stringToTreeNode(string2);
+    NodeType *new_root = new NodeType();
+    treeNodeToNodeType(pRoot1, new_root);
     bool isSubTree = Solution().HasSubtree(pRoot1, pRoot2);
+    vtree.draw(new_root);
     string out = isSubTree ? "true" : "false";
     printf("%s", out.c_str());
     return 0;
