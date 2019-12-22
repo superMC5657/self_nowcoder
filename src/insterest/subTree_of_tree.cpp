@@ -32,7 +32,7 @@ public:
     }
 };
 
-int fun(int argc, char *argv[]) {
+int fun() {
     string string1 = "[8,8,7,9,2,null,null,null,null,4,7]";
     string string2 = "[8,9,2]";
     TreeNode *pRoot1 = stringToTreeNode(string1);

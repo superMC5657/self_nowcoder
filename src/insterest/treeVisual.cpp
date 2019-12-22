@@ -11,7 +11,7 @@
 using bst::TreeNode;
 using bst::BSTree;
 
-int fun(int argc, char *argv[]) {
+int fun() {
     typedef int ValueType;
     typedef TreeNode<ValueType> NodeType;
 
