@@ -18,6 +18,7 @@
 #include <queue>
 #include <functional>
 #include <cmath>
+
 using std::stack;
 using std::unordered_map;
 using std::map;
@@ -35,6 +36,15 @@ using std::max;
 using std::min;
 using std::function;
 namespace self_envs {
+    struct RandomListNode {
+        int label;
+        struct RandomListNode *next, *random;
+
+        explicit RandomListNode(int x) :
+                label(x), next(nullptr), random(nullptr) {
+        }
+    };
+
     struct ListNode {
         int val;
         ListNode *next;
@@ -54,7 +64,7 @@ namespace self_envs {
     };
 
     struct graphNode {
-        int val;
+        int val{};
         vector<graphNode *> neighbors;
 
         graphNode() = default;
