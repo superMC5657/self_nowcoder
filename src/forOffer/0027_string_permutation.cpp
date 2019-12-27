@@ -8,12 +8,12 @@
 
 class Solution {
 private:
-    vector<string> insert_permutation(vector<string> pre_dp_str, char c) {
+    static vector<string> insert_permutation(const vector<string> &pre_dp_str, char c) {
         vector<string> sub_dp_str;
-        for (int j = 0; j < pre_dp_str.size(); ++j) {
-            for (int i = 0; i <= pre_dp_str[j].size(); ++i) {
-                string tmp = pre_dp_str[j];
-                tmp.insert(pre_dp_str[j].size() - i, 1, c);
+        for (auto &j : pre_dp_str) {
+            for (int i = 0; i <= j.size(); ++i) {
+                string tmp = j;
+                tmp.insert(j.size() - i, 1, c);
                 if (std::find(sub_dp_str.begin(), sub_dp_str.end(), tmp) == sub_dp_str.end()) {
                     sub_dp_str.emplace_back(tmp);
                 }
@@ -23,7 +23,7 @@ private:
     }
 
 public:
-    vector<string> Permutation(string str) {
+    vector<string> Permutation(const string &str) {
         if (str.empty()) {
             return {};
         }
@@ -45,9 +45,10 @@ public:
 };
 
 int fun() {
-    vector<string> output = Solution().Permutation("abc");
-    for (int i = 0; i < output.size(); ++i) {
-        cout << output[i] << "\n";
+    Solution solution;
+    vector<string> output = solution.Permutation("abc");
+    for (const auto &i : output) {
+        cout << i << "\n";
     }
     cout << endl;
     return 0;
