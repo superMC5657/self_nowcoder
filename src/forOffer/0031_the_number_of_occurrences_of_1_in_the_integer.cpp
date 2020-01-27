@@ -19,4 +19,5 @@ public:
 int fun() {
     Solution solution;;
     printf("%d", solution.NumberOf1Between1AndN_Solution(10));
+    return 0;
 }
