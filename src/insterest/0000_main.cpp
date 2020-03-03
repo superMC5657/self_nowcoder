@@ -3,8 +3,8 @@
   !@author: superMC @email: 18758266469@163.com
   !@fileName: 0000_main.cpp
  */
-#include "callBack.c"
+#include "findIf_func.cpp"
 
 int main(int argc, char *argv[]) {
-    fun();
+    fun(argc, argv);
 }

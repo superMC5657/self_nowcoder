@@ -9,9 +9,20 @@ class Solution {
 public:
     int FirstNotRepeatingChar(string str) {
 
+        map<char, int> mp;
+        for (char i : str)
+            mp[i]++;
+        for (int i = 0; i < str.size(); ++i) {
+            if (mp[str[i]] == 1)
+                return i;
+        }
+        return -1;
     }
 };
 
 int fun() {
+    string str = "Hello World";
+    int ret = Solution().FirstNotRepeatingChar(str);
+    printf("%d", ret);
     return 0;
 }

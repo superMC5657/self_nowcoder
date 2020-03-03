@@ -1,4 +1,4 @@
-#include "0033_ugly_number.cpp"
+#include "0042_and_two_numbers_for_s.cpp"
 
 int main() {
     fun();
