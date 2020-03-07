@@ -78,5 +78,16 @@ namespace self_envs {
             neighbors = std::move(_neighbors);
         }
     };
+
+    struct TreeLinkNode {
+        int val;
+        struct TreeLinkNode *left;
+        struct TreeLinkNode *right;
+        struct TreeLinkNode *next;
+
+        explicit TreeLinkNode(int x) : val(x), left(nullptr), right(nullptr), next(nullptr) {
+
+        }
+    };
 }
 #endif //SELF_LEETCODE_ENVIROMENT_H

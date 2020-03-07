@@ -152,4 +152,9 @@ string integerVectorToString(vector<int> list, int length = -1) {
     return "[" + result.substr(0, result.length() - 2) + "]";
 }
 
+template <typename T, size_t N>
+inline size_t Count(  T ( & arr )[N] ) {
+    return N;
+}
+
 #endif //SELF_NOWCODER_SELFFUN_H
